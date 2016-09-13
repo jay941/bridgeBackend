@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    port = 8074;
+    port = process.env.PORT||8074;
 var nodemailer = require('nodemailer');
 
 
