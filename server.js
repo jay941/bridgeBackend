@@ -40,7 +40,7 @@ app.post('/setData', function (req, res) {
         "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
         "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
         "<b> a Job with Tech Companies</b>" + ".Please visit our website " + "<a href= http://www.bridgelabz.com > bridgelabz.com</a>" +
-        "and read the attached FAQ for more details." + "<br>" +
+        " and read the attached FAQ for more details." + "<br>" +
         "<a href= https://docs.google.com/document/d/1qC5ZTHOSFjSRMYzvHJuNwc2jnv3iEZ3YVEl9D8FUVMo/edit > BridgeLabz Writeup and FAQ</a>" +
         "<br>" + "Please note you are expected to know Coding and have Engineering Degree. So engineers comfortable with coding only come for walk-in interview. The Walk-In Interview timings are:" + "<br>" + "<br" +
         "<br>" + "<table style= border-collapse: collapse; border: 1px solid black> <tr> <td style=border: 1px solid black>Tuesday, Wednesday and Thursday</td> <td style= border: 1px solid black >(1PM - 6PM)</td> </tr> <tr><td style= border: 1px solid black >Friday and Saturday</td><td style= border: 1px solid black >Full Day (Morning 10AM - 6PM)</td> </tr> </table>" + "<br>" + "Best Wishes," + "<br>" + "BridgeLabz LPP" + "<br>" +
@@ -64,9 +64,8 @@ app.post('/setData', function (req, res) {
    //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
         console.log("Connected successfully to server");
-        var collection = db.collection("doc1");
         // Insert some documents
-         collection.insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
+        db.collection('doc1').insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module
                 if (err || !saved) res.end("User not saved");
                 else res.end("User saved");
@@ -77,7 +76,7 @@ app.post('/setData', function (req, res) {
 
 });
 app.listen(port, function () {
-    console.log("server running");
+console.log("server running");
 })
 
 
