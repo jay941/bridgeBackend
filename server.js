@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    port = process.env.PORT || 8074;
+    port = process.env.PORT || 8075;
 var nodemailer = require('nodemailer');
 app.use(bodyParser());
 //mongo connection
@@ -64,7 +64,7 @@ app.post('/setData', function (req, res) {
    //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
         console.log("Connected successfully to server");
-        var collection = db.collection('doc');
+        var collection = db.collection("doc1");
         // Insert some documents
          collection.insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module

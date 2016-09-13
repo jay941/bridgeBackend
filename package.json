@@ -1,10 +1,10 @@
 {
   "name": "bridge941",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "debug-log": "^1.0.0",
     "express": "^4.14.0",
     "google-auth-library": "^0.9.8",
     "googleapis": "^13.0.0",
@@ -27,7 +27,8 @@
     "url": "https://github.com/nextitsoftsys/bridge941/issues"
   },
   "homepage": "https://github.com/nextitsoftsys/bridge941#readme",
-    "engines": {
+  "engines": {
     "node": "6.4.0"
-}
+  },
+  "description": ""
 }
