@@ -65,7 +65,7 @@ app.post('/setData', function (req, res) {
    //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
         console.log("Connected successfully to server");
-        var collection = db.createCollection('doc')
+        var collection = db.Collection('doc')
         // Insert some documents
          collection.insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module
