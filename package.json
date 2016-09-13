@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/nextitsoftsys/bridge941/issues"
   },
-  "homepage": "https://github.com/nextitsoftsys/bridge941#readme"
+  "homepage": "https://github.com/nextitsoftsys/bridge941#readme",
+    "engines": {
+    "node": "6.4.0"
+}
 }
