@@ -1,0 +1,735 @@
+<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+    ================================================== -->
+	<meta charset="utf-8">
+	<title>BridgeLabz - Lab to nurture Engineering Talent and Ideas</title>
+	<meta name="description" content="Lab to nurture Engineering Talent and Ideas">
+	<meta name="author" content="Xtracut">
+
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/fwslider.css" media="all">
+	<link rel="stylesheet" href="css/swipebox.css" media="all">
+	<link rel="stylesheet" href="css/font-awesome.min.css" media="all">
+	<link rel="stylesheet" href="css/linecons.css" media="all">
+	<link rel="stylesheet" href="css/flexslider/main.css" media="all">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+    ================================================== -->
+	<link rel="shortcut icon" href="images/fav.png">
+
+
+	<!-- Scripts
+    ================================================== -->
+
+	<!-- jQuery Library -->
+	<script src = "bower_components/angular/angular.js"></script>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
+	<script src="js/css3-mediaqueries.js" type="text/javascript"></script>
+	<script src="js/fwslider.js" type="text/javascript"></script>
+	<script src="js/retina.js" type="text/javascript"></script>
+	<script src="js/jquery.twitter.js" type="text/javascript"></script>
+	<script src="js/parallax.js" type="text/javascript"></script>
+	<script src="js/jquery.swipebox.min.js" type="text/javascript"></script>
+	<script src="js/ios-orientationchange-fix.js" type="text/javascript"></script>
+	<script src="js/jquery.scrollTo.js" type="text/javascript"></script>
+	<script src="js/jquery.nav.js" type="text/javascript"></script>
+	<script src="js/jquery.dropdown.js" type="text/javascript"></script>
+	<script src="js/jquery.sticky.js" type="text/javascript"></script>
+	<script src="js/jquery.quovolver.js" type="text/javascript"></script>
+	<script src="app.js"></script>
+	<script src="js/custom.js" type="text/javascript"></script>
+	<!--<script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
+	
+	
+    
+	<script src="controller/contact.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//.parallax(xPosition, speedFactor, outerHeight) options:
+			//xPosition - Horizontal position of the element
+			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+			$('.buy').parallax("50%", 0.4);
+			$('.work').parallax("50%", 0.3);
+			$('.testimonials').parallax("50%", 0.2);
+			$('.newsletter').parallax("50%", 0.1);
+		})
+	</script>
+
+
+</head>
+<body ng-app="myApp">
+
+<!-- SLIDER / Start
+=========================================== -->
+<div id="fwslider">
+	<div class="slider_container">
+
+		<!-- slide one -->
+		<a href="#services">	<div class="slide">
+			<img src="images/slide-bg-4.jpg">
+			<div class="slide_content">
+				<div class="slide_content_wrap">
+
+				</div>
+			</div>
+		</div></a>
+
+		<!-- slide two -->
+		<a href="#contact"><div class="slide">
+			<img src="images/slide-bg-3.jpg">
+			<div class="slide_content">
+				<div class="slide_content_wrap">
+					<!--<div class="logo"><img src="images/logo.png"></div>
+					<h4 class="title">Are you a Fresh Engineers wanting to work</br> with Super Tech Companies. </h4>
+					<p class="description">Interested?</p>
+					<a class="button readmore" href="#">Contact Us</a> -->
+				</div>
+			</div>
+		</div></a>
+		<!-- slide three -->
+		<a href="#contact"><div class="slide">
+			<img src="images/slide-bg-2.jpg">
+			<div class="slide_content">
+				<div class="slide_content_wrap">
+					<!--	<div class="logo"><img src="images/logo.png"></div>
+                        <h4 class="title">Lab to Nurture </br>Startup Ideas. </h4>
+                        <p class="description">Partner with us.</p>
+                        <a class="button readmore" href="#">Read More</a> -->
+				</div>
+			</div>
+		</div></a>
+
+	</div>
+
+	<!-- slider navigation -->
+	<div class="timers"></div>
+	<div class="slidePrev"><span><i class="icon-chevron-left "></i></span></div>
+	<div class="slideNext"><span><i class="icon-chevron-right "></i></span></div>
+
+</div>
+<!-- SLIDER / End
+=========================================== -->
+
+<!-- TOP HEADER BAR / Start
+=========================================== -->
+<header>
+	<nav>
+		<!-- nav menu -->
+		<ul class="clearfix">
+			<li><a class="current" href="#fwslider">Home</a></li>
+			<li><a href="#services">What We Do</a></li>
+			<li><a href="#associates">Who We Work With</a></li>
+			<li><a href="#about">Who We Are</a></li>
+			<li><a href="#contact">Get in Touch</a></li>
+		</ul>
+
+		<a href="#" class="pull"><i class="icon-reorder"></i></a>
+	</nav>
+</header>
+<!-- TOP HEADER BAR / End
+=========================================== -->
+
+<!-- SERVICES / Start
+=========================================== -->
+<section id="services">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="title">
+			<div class="six columns">
+				<h2>What We Do</h2>
+			</div>
+
+			<div class="ten columns">
+				<p class="three-lines" style="font-size:25px;"><b>We Nurture Fresh Engineers to become holistic Product Developer by working on live Startup Apps for Tech Companies to hire.</b></p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="grey">
+		<div class="container">
+
+			<!-- service hex icons -->
+			<div class="one-third column">
+				<figure class="service">
+					<div class="hex">
+						<span aria-hidden="true" class="li_user"></span>
+					</div>
+					<figcaption>
+						<h3>Fresh Engineer</h3>
+						<p >Learn to hack, be a full stack developer with a job in hand and get to work on live products under the mentorship of Senior Engineers.</p>
+					</figcaption>
+				</figure>
+			</div>
+
+			<!-- service hex icons -->
+			<div class="one-third column">
+				<figure class="service">
+					<div class="hex">
+						<span aria-hidden="true" class="li_cloud"></span>
+					</div>
+					<figcaption>
+						<h3>Tech Company</h3>
+						<p >Get hardcore developers contributing from day one in the required technology stack without having your senior engineer to spend time to mentor the fresher. </p>
+					</figcaption>
+				</figure>
+			</div>
+
+			<!-- service hex icons -->
+			<div class="one-third column">
+				<figure class="service">
+					<div class="hex">
+						<span aria-hidden="true" class="li_star"></span>
+					</div>
+					<figcaption>
+						<h3>Start Ups</h3>
+						<p >Have solid ideas which never gets developed. BridgeLabz with its unique proposition and its ecosystem makes it a possibility with the co-founding senior engineers.</p>
+					</figcaption>
+				</figure>
+			</div>
+
+			<!-- service hex icons
+            <div class="four columns">
+                <figure class="service">
+                    <div class="hex">
+                        <span aria-hidden="true" class="li_diamond"></span>
+                    </div>
+                    <figcaption>
+                        <h3>Know the Engineer</h3>
+                        <p style="text-align: justify;">Get an exclusive chance to know and connect with the fresh engineers blossoming in BridgeLabz with no commitment.</p>
+                    </figcaption>
+                </figure>
+            </div> -->
+		</div>
+	</div>
+
+	<div class="container">
+
+		<figure class="promo clearfix">
+			<div class="eight columns">
+				<img src="images/devices.png">
+			</div>
+
+			<figcaption class="eight columns">
+				<h3>KNOW THE ENGINEER PROGRAMME</h3>
+				<p>Sign up for this unique FREE programme which gives an exclusive chance to know and connect with the fresh engineers blossoming in BridgeLabz. </br>Interested?</p>
+				<a href="#contact" class="button">Contact Us</a>
+			</figcaption>
+		</figure>
+
+	</div>
+
+</section>
+<section class="buy">
+
+	<div class="white-overlay">
+		<h4>Like to Partner with us?</h4>
+		<p>Get hardcore developers contributing from day one without having to spend time to mentor the fresher</p>
+		<a href="#contact" class="button">Join Us</a>
+	</div>
+
+</section>
+<!-- SERVICES / End
+=========================================== -->
+<!-- Who we work with / Start
+=========================================== -->
+<section id="associates">
+
+	<div class="container">
+
+		<!-- Title -->
+		<div class="title">
+			<div class="six columns">
+				<h2>Who We Work With</h2>
+			</div>
+
+			<div class="ten columns">
+				<p class="two-lines"><b>We are proud to be associated with these awesome tech companies.</b></p>
+			</div>
+		</div>
+
+	</div>
+
+
+		<div class="" style="margin-top:30px;margin-bottom: 50px">
+			<div class="container">
+
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<img src="images/partners/craftsvilla_logo.png" />
+						</li>
+						<li>
+							<img src="images/partners/hurix.png" />
+						</li>
+						<li>
+							<img src="images/partners/mera_doctor.png" />
+						</li>
+						<li>
+							<img src="images/partners/heena.png" />
+						</li>
+						<li>
+							<img src="images/partners/99adventure.png" />
+						</li>
+						<li>
+							<img src="images/partners/xpresson.png" />
+						</li>
+						<!-- items mirrored twice, total of 12 -->
+					</ul>
+				</div>
+			</div>
+		</div>
+</section>
+
+<!-- SERVICES / End
+=========================================== -->
+
+<!-- Promotion
+=========================================== -->
+<section class="buy">
+
+	<div class="white-overlay">
+		<h4>Are you ready to join BridgeLabz?</h4>
+		<p>Just click the button and get to the next step!</p>
+		<a href="#contact" class="button">Contact Us</a>
+	</div>
+
+</section>
+
+<!-- ABOUT / Start
+=========================================== -->
+<section id="about">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="title clearfix">
+			<div class="six columns">
+				<h2>Who We Are</h2>
+			</div>
+
+			<div class="ten columns">
+				<p class="three-lines" style="font-size:25px;">We are a team of passionate people working on exciting ideas in a Lab nurturing Fresh Engineers and Startups.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Some Text -->
+	<div class="grey">
+		<div class="container">
+
+			<article class="eight columns">
+				<h3>Mission</h3>
+				<p>BridgeLabz mission is to fulfill the aspiration of fresh engineers to find jobs, tech companies
+					to have qualified fresh talent, senior engineer to co-found startups & seasoned professionals to develop ideas.</p>
+			</article>
+
+			<article class="eight columns">
+				<h3>Vision</h3>
+				<p>BridgeLabz aims to be a platform for seasoned professionals to develop their ideas with senior engineers who aspire to be co-founders.
+					They in turn use the fresh engineers to develop the apps who becomes qualified developer for a job with tech companies.</p>
+			</article>
+
+		</div>
+	</div>
+
+
+	<!-- Skills
+    <div class="container">
+
+        <article>
+
+            <h5>Skills</h5>
+
+            <div class="sixteen columns">
+                <ul class="skills clearfix">
+                    <li><span class="skill-title">Software Development</span><div class="skill-bar"><div class="skill-bar-content" data-percentage="90">90%</div></div></li>
+                    <li><span class="skill-title">Business Development</span><div class="skill-bar"><div class="skill-bar-content" data-percentage="80">80%</div></div></li>
+                    <li><span class="skill-title">Team Management</span><div class="skill-bar"><div class="skill-bar-content" data-percentage="90">90%</div></div></li>
+                    <li><span class="skill-title">Mobile Applications</span><div class="skill-bar"><div class="skill-bar-content" data-percentage="85">85%</div></div></li>
+                </ul>
+            </div>
+
+        </article>
+
+    </div>		-->
+
+	<!-- Team -->
+	<div class="grey">
+		<div class="container">
+
+			<article>
+
+				<h5>Our Faces</h5>
+
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/face-one.jpg">
+						<figcaption>
+							<span>Mohsin Bhanwadia</span>
+							<ul>
+
+								<li><a href="https://in.linkedin.com/in/bhanwadia"><i class="icon-linkedin"></i></a></li>
+							</ul>
+							<span>Business Head & Founding Member</span>
+						</figcaption>
+					</figure>
+				</div>
+
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/vidya.jpg">
+						<figcaption>
+							<span>Shreevidya Ramamurthy</span>
+
+							<span >Relationship Head and Founding Member</span>
+						</figcaption>
+					</figure>
+				</div>
+
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/ashish.jpg">
+						<figcaption>
+							<span>Ashes Vats</span>
+							<ul>
+
+								<li><a href="https://www.linkedin.com/in/ashes-vats-50734046"><i class="icon-linkedin"></i></a></li>
+							</ul>
+							<span>Engineering Head and Founding Member</span>
+						</figcaption>
+					</figure>
+				</div> <hr>
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/face-two.jpg">
+						<figcaption>
+							<span>Narayan Mahadevan</span>
+							<ul>
+
+								<li><a href="https://in.linkedin.com/in/narayanprofile"><i class="icon-linkedin"></i></a></li>
+							</ul>
+							<span>CTO Mauj Mobile  </br> Advisor & Technologist</span>
+						</figcaption>
+					</figure>
+				</div>
+
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/nithya.jpg">
+						<figcaption>
+							<span>Nithyashree G Subban</span>
+							<ul>
+
+
+							</ul>
+							<span>Founder Celebrity Football League </br>Mentor </span>
+						</figcaption>
+					</figure>
+				</div>
+
+				<div class="one-third column">
+					<figure class="picture">
+						<img src="images/vijay.png">
+						<figcaption>
+							<span>Vijay Talreja</span>
+							<ul>
+
+								<li><a href="https://in.linkedin.com/in/vijaytalreja"><i class="icon-linkedin"></i></a></li>
+							</ul>
+							<span>Co Founder, Adapty Inc</br>Tech Entrepreneur and Advisor</span>
+						</figcaption>
+					</figure>
+				</div>
+
+			</article>
+
+
+		</div>
+	</div>
+
+</section>
+<!-- ABOUT / End
+=========================================== -->
+
+<!-- Work With Us
+=========================================== -->
+<section class="work">
+
+	<article>
+		<h4>Work With Us!</h4>
+		<p>Would you like to be a part of BridgeLabs?</p>
+		<a href="#contact" class="button green">Contact</a>
+	</article>
+
+</section>
+
+
+
+
+<!-- Contact / Srart
+================================================== -->
+<section id="contact">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="title clearfix">
+			<div class="six columns">
+				<h2>Contact</h2>
+			</div>
+
+			<div class="ten columns">
+				<p class="two-lines">Do you have any questions? <br> Get in touch!</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="white">
+		<div class="container">
+
+			<!-- Contact Form -->
+			<div class="contact-form" ng-controller="validation">
+
+				<div class="sixteen columns">
+					<div class="success-message">
+						<p>Your message has been sent!</p>
+					</div>
+				</div>
+ 
+				<form class="clearfix" name="myform" id="myform1"  >
+
+					<div class="eight columns">
+                        
+						<div class="field user">
+							<input type="text" name="name" class="text" value="Name" placeholder="Name" ng-model="name"/>
+						</div>
+
+						<div class="field envelope">
+							<input type="email" name="email" class="text" value="Email" placeholder="Email" ng-model="email"/>
+						</div>
+
+						<div class="field bulb">
+							<input type="text" name="subject" class="text" value="Subject" placeholder="Subject" ng-model="subject"/>
+						</div>
+
+						<div class="field user">
+							<input type="text" name="profile" class="text" value="Profile" ng-model="profile" placeholder="Your Profile" />
+						</div>
+						
+					</div>
+
+					<div class="eight columns">
+
+						<div class="field pen">
+							<textarea name="message" class="text textarea" ng-model="message" placeholder="Message"></textarea>
+						</div>
+
+						<div class="field"> 
+							<button id="send" class="send" ng-click="demo()" ><span aria-hidden="true" class="li_paperplane"> </span>Submit</button>
+							<div class="loading"></div>
+						</div>
+
+					</div>
+
+				</form>
+			</div>
+			<!-- Contact Form / End -->
+
+		</div>
+	</div>
+
+</section>
+<!-- Contact / End
+================================================== -->
+
+<!-- Footer / Srart
+================================================== -->
+<footer>
+
+	<!-- Twitter Feed
+    <div class="bluebg">
+        <div class="container">
+            <ul id="twitter-feed"></ul>
+            <script type="text/javascript">
+                jQuery(document).ready(function($){
+                $.getJSON('get-tweets.php?url='+encodeURIComponent('statuses/user_timeline.json?screen_name=google&count=3'), function(tweets){
+                    $("#twitter-feed").html(tz_format_twitter(tweets));
+                }); });
+            </script>
+        </div>
+    </div>
+     -->
+	<!-- Footer Contact Details -->
+	<div class="contact-details">
+		<img src="images/logo_w.png">
+		<p><i class="icon-map-marker"></i> BridgeLabz Solutions LLP,
+			#801, 8th Floor, Sai Samarth Business Park, </br>Deonar Village Road, near Govandi Station East, Mumbai - 400088</br>
+			<i class="icon-envelope-alt"></i>hello@bridgelabz.com</br>  <i class="icon-phone"></i>  Tel: +917045948949 </p>
+		<ul class="socials bot">
+			<li><a href="#"><i class="icon-twitter"></i></a></li>
+			<li><a href="#"><i class="icon-facebook"></i></a></li>
+			<li><a href="#"><i class="icon-linkedin"></i></a></li>
+		</ul>
+	</div>
+	<center>
+	<p style="color:white;">Designed by <a href="www.xtracut.com" target="_blank">Xtracut</a></p>	</center>
+
+</footer>
+<!-- Footer / End
+================================================== -->
+
+<!-- FlexSlider -->
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script>
+	$(window).load(function() {
+		$('.flexslider').flexslider({
+			animation: "slide",
+			animationLoop: false,
+			itemWidth: 310,
+			itemMargin: 0,
+
+		});
+	});
+	/*----------------------------------------------------*/
+	/*	Contact Form
+	 /*----------------------------------------------------*/
+
+	/* jQuery Start */
+	// jQuery(document).ready(function() {
+
+	// 	(function() {
+	// 		var animateSpeed=300;
+	// 		var emailReg = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+
+	// 		// Validating
+
+	// 		function validateName(name) {
+	// 			if (name.val()=='*') {name.addClass('validation-error',animateSpeed); return false;}
+	// 			else {name.removeClass('validation-error',animateSpeed); return true;}
+	// 		}
+
+	// 		function validateEmail(email,regex) {
+	// 			if (!regex.test(email.val())) {email.addClass('validation-error',animateSpeed); return false;}
+	// 			else {email.removeClass('validation-error',animateSpeed); return true;}
+	// 		}
+
+	// 		function validateSubject(asubject) {
+	// 			if (asubject.val()=='*') {asubject.addClass('validation-error',animateSpeed); return false;}
+	// 			else {asubject.removeClass('validation-error',animateSpeed); return true;}
+	// 		}
+
+	// 		function validateMessage(message) {
+	// 			if (message.val()=='') {message.addClass('validation-error',animateSpeed); return false;}
+	// 			else {message.removeClass('validation-error',animateSpeed); return true;}
+	// 		}
+
+	// 		$('#send').click(function() {
+
+	// 			var result=true;
+
+	// 			var name = $('input[name=name]');
+	// 			var email = $('input[name=email]');
+	// 			var asubject = $('input[name=asubject]');
+	// 			var message = $('textarea[name=message]');
+	// 			var budget = $('input[name="budget"]');
+
+	// 			// Validate
+	// 			if(!validateName(name)) result=false;
+	// 			if(!validateSubject(asubject)) result=false;
+	// 			if(!validateEmail(email,emailReg)) result=false;
+	// 			if(!validateMessage(message)) result=false;
+
+	// 			if(result==false) return false;
+
+	// 			// Data
+	// 			var data = 'name=' + name.val() + '&email=' + email.val() + '&asubject=' + asubject.val() + '&message='  + encodeURIComponent(message.val()) + "&budget="+budget.val();
+
+	// 			// Disable fields
+	// 			$('.text').attr('disabled','true');
+
+	// 			// Loading icon
+	// 			$('.loading').show();
+
+	// 			// Start jQuery
+	// 			$.ajax({
+
+	// 				// PHP file that processes the data and send mail
+	// 				url: "contact.php",
+
+	// 				// GET method is used
+	// 				type: "GET",
+
+	// 				// Pass the data
+	// 				data: data,
+
+	// 				//Do not cache the page
+	// 				cache: false,
+
+	// 				// Success
+	// 				success: function (html) {
+
+	// 					if (html==1) {
+
+	// 						// Loading icon
+	// 						$('.loading').fadeOut('slow');
+
+	// 						//show the success message
+	// 						$('.success-message').slideDown('slow');
+
+	// 						// Disable send button
+	// 						$('.send').attr('disabled',true);
+
+	// 					}
+
+	// 					else {
+	// 						$('.loading').fadeOut('slow')
+	// 						alert('Sorry, unexpected error. Please try again later.');
+	// 					}
+	// 				}
+	// 			});
+
+	// 			return false;
+
+	// 		});
+
+	// 		$('input[name=name]').blur(function(){validateName($(this));});
+	// 		$('input[name=email]').blur(function(){validateEmail($(this),emailReg); });
+	// 		$('input[name=asubject]').blur(function(){validateSubject($(this));});
+	// 		$('textarea[name=message]').blur(function(){validateMessage($(this)); });
+
+	// 	})();
+
+	// });
+	/* jQuery End */
+</script>
+<!-- End Document
+================================================== -->
+</body>
+</html>

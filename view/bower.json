@@ -1,0 +1,20 @@
+{
+  "name": "bridgelabz.github.io",
+  "homepage": "https://github.com/bridgelabz/bridgelabz.github.io",
+  "authors": [
+    "nextitsoftsys <yadav.jayprakash20@yahoo.in>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
