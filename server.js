@@ -3,12 +3,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     port = process.env.PORT || 8074;
 var nodemailer = require('nodemailer');
-
-
-
 app.use(bodyParser());
-
-
+//mongo connection
 var MongoClient = require('mongodb').MongoClient;
 // Connection URL
 var url = 'mongodb://localhost:27017/bridgelabz';
