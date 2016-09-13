@@ -14,7 +14,7 @@ app.post('/setData', function (req, res) {
     console.log("POST: ");
     res.header("Access-Control-Allow-Origin: *");
     res.header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Origin", "http://localhost");
+    res.header("Access-Control-Allow-Origin", "https://bridge941.herokuapp.com");
     res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
@@ -63,9 +63,7 @@ app.post('/setData', function (req, res) {
     res.json(data);
    //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
-        console.log(db)
-        console.log("Connected successfully to server");
-        // Insert some documents
+     // Insert some documents
         db.collection('doc1').insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module
                 if (err || !saved) res.end("User not saved");
