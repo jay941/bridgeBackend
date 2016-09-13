@@ -30,6 +30,7 @@ app.post('/setData', function (req, res) {
     });
      //data- from post
      var data = req.body;
+     console.log()
      //message body
      var mailOption = {
         from: "Jayprakash yadav <yadav.jayprakash19@gmail.com>",
@@ -52,7 +53,7 @@ app.post('/setData', function (req, res) {
     console.log('hi', mailOption)
     transporter.sendMail(mailOption, function (error, response) {  //callback
         if (error) {
-            return console.log(error);
+            return console.log('error',error);
         } else {
 
             console.log("Message Sent");
