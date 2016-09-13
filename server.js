@@ -36,7 +36,6 @@ app.post('/setData', function (req, res) {
         from: "Jayprakash yadav <yadav.jayprakash19@gmail.com>",
         to: data.email,
         subject: 'Message from ' + 'jayprakash19',
-        text: 'hi',
         html: "<p>Dear" + " " + data.name + ",</p><br>" + "Thanks for applying. BridgeLabz gives aspiring engineers " +
         "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
         "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
