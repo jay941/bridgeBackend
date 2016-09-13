@@ -26,7 +26,6 @@ app.post('/setData', function (req, res) {
    
 
   var  transporter = nodemailer.createTransport({
-
     host: 'smtp.gmail.com',
     port: 465,
     secure: true, // use SSL 
@@ -76,7 +75,7 @@ app.post('/setData', function (req, res) {
    //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
        console.log("Connected successfully to server");
-        var collection = db.collection('doc');
+        var collection = db.collections('doc');
       
         // Insert some documents
         collection.save({ name:req.body.name,email: req.body.email, subject: req.body.subject, profile: req.body.profile,message: req.body.message },
