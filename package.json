@@ -1,0 +1,28 @@
+{
+  "name": "bridge941",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongo": "^0.1.0",
+    "nodemailer": "^2.6.0",
+    "nodemailer-smtp-transport": "^2.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextitsoftsys/bridge941.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nextitsoftsys/bridge941/issues"
+  },
+  "homepage": "https://github.com/nextitsoftsys/bridge941#readme"
+}
