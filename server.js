@@ -23,8 +23,6 @@ app.post('/setData', function (req, res) {
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
     //send mail
-
-
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -34,10 +32,10 @@ app.post('/setData', function (req, res) {
             pass: 'Wanted941'
         }
     });
-
-
-    var data = req.body;
-    var mailOption = {
+     //data- from post
+     var data = req.body;
+     //message body
+     var mailOption = {
         from: "Jayprakash yadav <yadav.jayprakash19@gmail.com>",
         to: data.email,
         subject: 'Message from ' + 'jayprakash19',
@@ -67,18 +65,12 @@ app.post('/setData', function (req, res) {
         transporter.close();
     });
     res.json(data);
-
-
-
-
-
-    //Use connect method to connect to the server
+   //Use connect method to connect to the server
     MongoClient.connect(url, function (err, db) {
         console.log("Connected successfully to server");
         var collection = db.collections('doc');
-
         // Insert some documents
-        collection.insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
+         collection.insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module
                 if (err || !saved) res.end("User not saved");
                 else res.end("User saved");
