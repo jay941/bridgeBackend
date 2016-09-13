@@ -6,10 +6,9 @@ var nodemailer = require('nodemailer');
 app.use(bodyParser());
 //mongo connection
 var MongoClient = require('mongodb').MongoClient;
+// Connection URL
+var url = 'mongodb://localhost:27017/bridgelabz';
 
-//Use connect method to connect to the server
-MongoClient.connect('mongodb://localhost:27017/bridgelabz?auto_reconnect');
- console.log("Connected successfully to server");
 //post
 app.post('/setData', function (req, res) {
     console.log("POST: ");
@@ -62,7 +61,11 @@ app.post('/setData', function (req, res) {
         transporter.close();
     });
     res.json(data);
-      // Insert some documents
+   //Use connect method to connect to the server
+    MongoClient.connect(url, function (err, db) {
+        console.log(db)
+        console.log("Connected successfully to server");
+        // Insert some documents
         db.collection('doc1').insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
             function (err, saved) { // Query in MongoDB via Mongo JS Module
                 if (err || !saved) res.end("User not saved");
@@ -70,7 +73,7 @@ app.post('/setData', function (req, res) {
             });
         //db close
         db.close();
-    
+    });
 
 });
 app.listen(port, function () {
