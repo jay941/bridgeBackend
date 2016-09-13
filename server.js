@@ -7,7 +7,7 @@ app.use(bodyParser());
 //mongo connection
 var MongoClient = require('mongodb').MongoClient;
 // Connection URL
-var url = 'mongodb://localhost:27017/bridgelabz?auto_reconnect';
+var url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 
 //post
 app.post('/setData', function (req, res) {
