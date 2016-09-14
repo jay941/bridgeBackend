@@ -27,6 +27,7 @@ app.post('/setData', function (req, res) {
      var data = req.body;
      var name = req.body.name;
      var email = req.body.email;
+     console.log(data)
     //validation
     req.checkBody('name', 'Invalid Name').notEmpty();
     req.checkBody('email', 'Invalid Email').isEmail({ errorMessage: 'Invalid Email' });
