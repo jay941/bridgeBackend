@@ -5,7 +5,9 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "debug-log": "^1.0.0",
+    "email-validator": "^1.0.5",
     "express": "^4.14.0",
+    "express-validator": "^2.20.8",
     "google-auth-library": "^0.9.8",
     "googleapis": "^13.0.0",
     "mongo": "^0.1.0",
