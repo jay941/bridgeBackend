@@ -46,7 +46,7 @@ app.post('/setData', function (req, res) {
             secure: true, // use SSL 
             auth: {
                 user: 'yadav.jayprakash19@gmail.com',
-                pass: 'Wanted941'
+                pass: 'original password'
             }
         });
         //Template and Message body
