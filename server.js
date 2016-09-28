@@ -3,8 +3,8 @@ var express = require('express'),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
-   port = process.env.PORT || 8070;
-  cors=require('cors');
+    port = process.env.PORT || 8070;
+cors = require('cors');
 
 //configuration
 
@@ -13,24 +13,24 @@ app.use(bodyParser());
 app.use(cors());
 app.use(expressValidator());
 
- //mongo connection
-var  MongoClient = require('mongodb').MongoClient;
-    // Connection URL
-var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
+//mongo connection
+var MongoClient = require('mongodb').MongoClient;
+// Connection URL
+var url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 //post
 app.post('/setData', function (req, res) {
     console.log("POST: ");
-    res.header("Access-Control-Allow-Origin"," *");
-    res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
+    res.header("Access-Control-Allow-Origin", " *");
+    res.header("Access-Control-Allow-Headers", " Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Origin", "http://bridgelabz.in");
     res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
     //data- from post
-     var data = req.body;
-     var name = req.body.name;
-     var email = req.body.email;
-     console.log(data)
+    var data = req.body;
+    var name = req.body.name;
+    var email = req.body.email;
+    console.log(data)
     //validation
     req.checkBody('name', 'Invalid Name').notEmpty();
     req.checkBody('email', 'Invalid Email').isEmail({ errorMessage: 'Invalid Email' });
@@ -70,25 +70,28 @@ app.post('/setData', function (req, res) {
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: Veejay Basottia</p>" +
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: +917045948949</p>"
         };
-     
+
         transporter.sendMail(mailOption, function (error, response) {  //callback
             if (error) {
-                return console.log('error', error);
+                console.log('error', error);
+                res.send('error');
             } else {
 
                 console.log("Message Sent");
+                res.send('success');
             }
             // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
             transporter.close();
         });
-        res.send('success');
+
         //Use connect method to connect to the server
         MongoClient.connect(url, function (err, db) {
             // Insert some documents
             db.collection('doc1').insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
                 function (err, saved) { // Query in MongoDB via Mongo JS Module
-                    if (err || !saved) res.end("User not saved");
-                    else res.end("User saved");
+                    if (err || !saved) {
+                        console.log("User not saved");
+                    } else { console.log("User saved"); }
                 });
             //db close
             db.close();
@@ -98,7 +101,7 @@ app.post('/setData', function (req, res) {
 
 });//end of POST
 app.listen(port, function () {
-    console.log( port,"server running");
+    console.log(port, "server running");
 })
 
 
