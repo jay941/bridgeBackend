@@ -67,7 +67,7 @@ app.post('/setData', function (req, res) {
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: Veejay Basottia</p>" +
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: +917045948949</p>"
         };
-        console.log('hi', mailOption)
+     
         transporter.sendMail(mailOption, function (error, response) {  //callback
             if (error) {
                 return console.log('error', error);
