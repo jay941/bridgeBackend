@@ -19,10 +19,10 @@ var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 //post
 app.post('/setData', function (req, res) {
     console.log("POST: ");
-    // res.header("Access-Control-Allow-Origin"," *");
-    // res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
-    // res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
-    // res.header("Access-Control-Allow-Methods", "GET, POST");
+    res.header("Access-Control-Allow-Origin"," *");
+    res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
+    res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
     //data- from post
