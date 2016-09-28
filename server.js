@@ -17,7 +17,12 @@ var  MongoClient = require('mongodb').MongoClient;
     // Connection URL
 var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 //post
-app.post('/setData', function (req, res) {
+
+var corsOptions = {
+  origin: 'https://bridge941.herokuapp.com/setData',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+};
+app.post('/setData', , cors(corsOptions),function (req, res) {
     console.log("POST: ");
     res.header("Access-Control-Allow-Origin"," *");
     res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
