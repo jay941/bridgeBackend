@@ -4,13 +4,13 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
    port = process.env.PORT || 8070;
-    // cors=require('cors');
+  cors=require('cors');
 
 //configuration
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser());
-// app.use(cors());
+app.use(cors());
 app.use(expressValidator());
 
  //mongo connection
