@@ -3,7 +3,7 @@ var express = require('express'),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
-    port=8087;
+   port = process.env.PORT || 8070;
     // cors=require('cors');
 
 //configuration
