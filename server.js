@@ -81,7 +81,7 @@ app.post('/setData', function (req, res) {
             // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
             transporter.close();
         });
-        res.json(data);
+        res.send('success');
         //Use connect method to connect to the server
         MongoClient.connect(url, function (err, db) {
             // Insert some documents
