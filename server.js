@@ -1,5 +1,5 @@
 var express = require('express'),
-    app = express(),
+     router = express.Router()
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
@@ -22,7 +22,7 @@ app.use(function(req, res) {
   
 });
 
-app.post('/setData', function (req, res) {
+router.post('/setData', function (req, res) {
     console.log("POST: ");
     //data- from post
      var data = req.body;
