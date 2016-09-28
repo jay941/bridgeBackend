@@ -52,9 +52,9 @@ app.post('/setData', function (req, res) {
         });
         //Template and Message body
         var mailOption = {
-            from: "Jayprakash yadav <yadav.jayprakash19@gmail.com>",
+            from: "BridgeLabz LPP <noreply@bridgelabz.com>",
             to: data.email,
-            subject: 'Message from ' + data.name,
+            subject: 'BridgeLabz LPP',
             html: "<p>Dear" + " " + data.name + ",</p><br>" + "Thanks for applying. BridgeLabz gives aspiring engineers " +
             "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
             "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
