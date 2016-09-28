@@ -26,7 +26,6 @@ app.post('/setData', , cors(corsOptions),function (req, res) {
     console.log("POST: ");
     res.header("Access-Control-Allow-Origin"," *");
     res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
     res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
