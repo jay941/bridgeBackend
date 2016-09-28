@@ -101,7 +101,6 @@ app.post('/setData',cors(corsOptions),function (req, res) {
 
 });//end of POST
 
-})
 
 
 
