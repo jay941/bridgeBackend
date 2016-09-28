@@ -45,8 +45,8 @@ app.post('/setData', function (req, res) {
             port: 465,
             secure: true, // use SSL 
             auth: {
-                user: 'yadav.jayprakash19@gmail.com',
-                pass: 'password'
+                user: 'noreply@bridgelabz.com',
+                pass: 'bridge1@bz'
             }
         });
         //Template and Message body
