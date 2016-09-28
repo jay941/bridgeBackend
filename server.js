@@ -52,9 +52,9 @@ app.post('/setData', function (req, res) {
         });
         //Template and Message body
         var mailOption = {
-            from: "BridgeLabz LPP <noreply@bridgelabz.com>",
+            from: "BridgeLabz LLP <noreply@bridgelabz.com>",
             to: data.email,
-            subject: 'BridgeLabz LPP',
+            subject: 'BridgeLabz LLP',
             html: "<p>Dear" + " " + data.name + ",</p><br>" + "Thanks for applying. BridgeLabz gives aspiring engineers " +
             "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
             "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
@@ -62,7 +62,7 @@ app.post('/setData', function (req, res) {
             " and read the attached FAQ for more details." + "<br>" +
             "<a href= https://docs.google.com/document/d/1qC5ZTHOSFjSRMYzvHJuNwc2jnv3iEZ3YVEl9D8FUVMo/edit > BridgeLabz Writeup and FAQ</a>" +
             "<br>" + "Please note you are expected to know Coding and have Engineering Degree. So engineers comfortable with coding only come for walk-in interview. The Walk-In Interview timings are:" + "<br>" + "<br" +
-            "<br>" + "<table style= border-collapse: collapse; border: 1px solid black> <tr> <td style=border: 1px solid black>Tuesday, Wednesday and Thursday</td> <td style= border: 1px solid black >(1PM - 6PM)</td> </tr> <tr><td style= border: 1px solid black >Friday and Saturday</td><td style= border: 1px solid black >Full Day (Morning 10AM - 6PM)</td> </tr> </table>" + "<br>" + "Best Wishes," + "<br>" + "BridgeLabz LPP" + "<br>" +
+            "<br>" + "<table style= border-collapse: collapse; border: 1px solid black> <tr> <td style=border: 1px solid black>Tuesday, Wednesday and Thursday</td> <td style= border: 1px solid black >(1PM - 6PM)</td> </tr> <tr><td style= border: 1px solid black >Friday and Saturday</td><td style= border: 1px solid black >Full Day (Morning 10AM - 6PM)</td> </tr> </table>" + "<br>" + "Best Wishes," + "<br>" + "BridgeLabz LLP" + "<br>" +
             "Live Practical Experience and Job with Tech Companies" + "<br>" + "<a href= https://www.google.com/maps/place/BridgeLabz+Solutions+LLP/@19.050264,72.9154953,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7c60c3f703e35:0x434d5c50ce19bcd4!8m2!3d19.050264!4d72.917684?hl=en> BridgeLabz Solutions LLP, #801, Sai Samarth Business Park, Near Govandi Station East, Mumbai - 400088</a>" + "<br>" + "<a href= http://bridgelabz.com >http://bridgelabz.com/ </a>" +
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Warm Regards</p>" +
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: Veejay Basottia</p>" +
