@@ -3,6 +3,7 @@ var express = require('express'),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
+    port = 8073;
     cors=require('cors');
 
 //configuration
@@ -100,6 +101,9 @@ app.post('/setData',cors(corsOptions),function (req, res) {
 
 
 });//end of POST
+app.listen(port, function () {
+    console.log("server running");
+});
 
 
 
