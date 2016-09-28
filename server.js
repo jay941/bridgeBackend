@@ -6,6 +6,7 @@ var express = require('express'),
    port = process.env.PORT || 8077;
 
 //configuration
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser());
 app.use(expressValidator());
@@ -45,8 +46,8 @@ app.post('/setData', function (req, res) {
             port: 465,
             secure: true, // use SSL 
             auth: {
-                user: 'yadav.jayprakash19@gmail.com',
-                pass: 'Wanted941'
+                user: 'noreply@bridgelabz.com',
+                pass: 'bridgelabz@123'
             }
         });
         //Template and Message body
@@ -95,7 +96,7 @@ app.post('/setData', function (req, res) {
 
 });//end of POST
 app.listen(port, function () {
-    console.log("server running");
+    console.log(port,"server running");
 })
 
 
