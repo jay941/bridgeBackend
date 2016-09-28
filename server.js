@@ -1,29 +1,29 @@
 var express = require('express'),
- app = express();
+    app = express(),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
    port = process.env.PORT || 8077;
- //mongo connection
-var  MongoClient = require('mongodb').MongoClient;
-    // Connection URL
-var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
-//post
+
 //configuration
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser());
 app.use(expressValidator());
-app.use(function(req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "GET, POST");
-  
-});
 
+ //mongo connection
+var  MongoClient = require('mongodb').MongoClient;
+    // Connection URL
+var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
+//post
 app.post('/setData', function (req, res) {
     console.log("POST: ");
+    res.header("Access-Control-Allow-Origin"," *");
+    res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
+    res.header("Access-Control-Allow-Methods", "GET, POST");
+    // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
+    // Cross Domain Request
     //data- from post
      var data = req.body;
      var name = req.body.name;
