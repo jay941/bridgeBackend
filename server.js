@@ -22,7 +22,7 @@ var corsOptions = {
   origin: 'https://bridge941.herokuapp.com/setData',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 };
-app.post('/setData', , cors(corsOptions),function (req, res) {
+app.post('/setData',cors(corsOptions),function (req, res) {
     console.log("POST: ");
     res.header("Access-Control-Allow-Origin"," *");
     res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
