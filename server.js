@@ -1,5 +1,5 @@
 var express = require('express'),
-     router = express.Router()
+ app = express();
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
@@ -14,7 +14,15 @@ var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser());
 app.use(expressValidator());
-router.post('/setData', function (req, res) {
+app.use(function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET, POST");
+  
+});
+
+app.post('/setData', function (req, res) {
     console.log("POST: ");
     //data- from post
      var data = req.body;
