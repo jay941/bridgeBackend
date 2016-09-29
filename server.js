@@ -58,7 +58,7 @@ app.post('/setData', function (req, res) {
             from: "BridgeLabz LLP <noreply@bridgelabz.com>",
             to: data.email,
             subject: 'BridgeLabz LLP',
-            html: "<p>Dear" + " " + data.name + ",</p><br>" + "Thanks for applying. BridgeLabz gives aspiring engineers " +
+            html: "<p>Dear" + " " + data.name + ",</p><br>" + "<p>"+"Thanks for applying."+"</p>"+" BridgeLabz gives aspiring engineers " +
             "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
             "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
             "<b> a Job with Tech Companies</b>" + ".Please visit our website " + "<a href= http://www.bridgelabz.com > bridgelabz.com</a>" +
