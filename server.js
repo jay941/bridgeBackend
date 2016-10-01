@@ -1,48 +1,46 @@
 var express = require('express'),
     app = express(),
-    expressValidator = require('express-validator'),
+
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
-   port = process.env.PORT || 8070;
-  cors=require('cors');
+    multiparty = require('multiparty');
+port = process.env.PORT || 8077;
+cors = require('cors');
 
 //configuration
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser());
 app.use(cors());
-app.use(expressValidator());
 
- //mongo connection
-var  MongoClient = require('mongodb').MongoClient;
-    // Connection URL
-var  url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
+
+//mongo connection
+var MongoClient = require('mongodb').MongoClient;
+// Connection URL
+var url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 //post
 app.post('/setData', function (req, res) {
     console.log("POST: ");
-    res.header("Access-Control-Allow-Origin"," *");
-    res.header("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Origin","http://bridgelabz.in");
-     res.header("Access-Control-Allow-Origin","http://bridgelabz.com");
+    res.header("Access-Control-Allow-Origin", " *");
+    res.header("Access-Control-Allow-Headers", " Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Origin", "http://bridgelabz.in");
+    res.header("Access-Control-Allow-Origin", "http://bridgelabz.com");
     res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
     //data- from post
-     var data = req.body;
-     var name = req.body.name;
-     var email = req.body.email;
-     console.log(data)
-    //validation
-    req.checkBody('name', 'Invalid Name').notEmpty();
-    req.checkBody('email', 'Invalid Email').isEmail({ errorMessage: 'Invalid Email' });
+    var form = new multiparty.Form();
+    form.parse(req, function (err, fields, files) {
+        console.log('files', files);
+        console.log('fields', fields.name);
 
-    var errors = req.validationErrors();
-    if (errors) {
-        res.send(errors);
-        return;
-    }//end of if 
-    else {
-
+        //data- from post
+        var data = fields;
+        var name = data.name[0];
+        var email = data.email[0];
+        var mobile = data.mobile[0];
+        var message = data.mobile[0];
+        console.log(name, email, mobile)
         //send mail configuration
         var transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -56,9 +54,9 @@ app.post('/setData', function (req, res) {
         //Template and Message body
         var mailOption = {
             from: "BridgeLabz LLP <noreply@bridgelabz.com>",
-            to: data.email,
+            to: email,
             subject: 'BridgeLabz LLP',
-            html: "<p>Dear" + " " + data.name + ",</p><br>" + "<p>"+"Thanks for applying."+"</p>"+" BridgeLabz gives aspiring engineers " +
+            html: "<p>Dear" + " " + name + ",</p><br>" + "<p>" + "Thanks for applying." + "</p>" + " BridgeLabz gives aspiring engineers " +
             "<b>Live Practical Experience </b>" + "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and a  " +
             "and a chance to develop in-depth knowledge in a well defined Tech Stack by developing real-world Apps and " +
             "<b> a Job with Tech Companies</b>" + ".Please visit our website " + "<a href= http://www.bridgelabz.com > bridgelabz.com</a>" +
@@ -71,7 +69,25 @@ app.post('/setData', function (req, res) {
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: Veejay Basottia</p>" +
             "<p style= font-size:15px;white-space:pre-wrap;color:rgb(75,75,75);font-family:roboto, sans-serif; >Tel: +917045948949</p>"
         };
-     
+        var em = { email: 'noreply@bridgelabz.com' };
+        var mailOptionCompany = {
+            from: email,
+            to: em.email,
+            subject: 'Meaasage From' + " " + name,
+            html: "<table border= 1><tr><td>Name</td><td>" + name + "</td></tr> <tr><td>Email</td><td>" + email + "</td></tr><tr><td>Mobile</td><td>" + mobile + "</td></tr><tr><td>Message</td><td>" + message + "</td></tr></table>"
+        };
+        transporter.sendMail(mailOptionCompany, function (error, response) {  //callback
+            if (error) {
+                return console.log('error', error);
+            } else {
+
+                console.log("Message Sent to the company");
+            }
+            // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
+            transporter.close();
+        });
+
+
         transporter.sendMail(mailOption, function (error, response) {  //callback
             if (error) {
                 return console.log('error', error);
@@ -86,7 +102,7 @@ app.post('/setData', function (req, res) {
         //Use connect method to connect to the server
         MongoClient.connect(url, function (err, db) {
             // Insert some documents
-            db.collection('doc1').insert({ name: req.body.name, email: req.body.email, subject: req.body.subject, profile: req.body.profile, message: req.body.message },
+            db.collection('doc1').insert({ name: name, email: email, mobile: mobile, message: message },
                 function (err, saved) { // Query in MongoDB via Mongo JS Module
                     if (err || !saved) res.end("User not saved");
                     else res.end("User saved");
@@ -94,13 +110,11 @@ app.post('/setData', function (req, res) {
             //db close
             db.close();
         });
-    }//end of else
 
 
+    });
 });//end of POST
 app.listen(port, function () {
-    console.log( port,"server running");
+    console.log(port, "server running");
 })
-
-
 

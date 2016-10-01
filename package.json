@@ -9,11 +9,14 @@
     "email-validator": "^1.0.5",
     "express": "^4.14.0",
     "express-validator": "^2.20.8",
+    "formidable": "^1.0.17",
     "google-auth-library": "^0.9.8",
     "googleapis": "^13.0.0",
     "mongo": "^0.1.0",
+    "multiparty": "^4.1.2",
     "nodemailer": "^2.6.0",
-    "nodemailer-smtp-transport": "^2.7.2"
+    "nodemailer-smtp-transport": "^2.7.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
