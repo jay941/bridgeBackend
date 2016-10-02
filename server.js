@@ -1,5 +1,6 @@
 var express = require('express'),
     multer	=	require('multer');
+    fs = require("fs");
     app = express(),
 
     bodyParser = require('body-parser'),
@@ -30,6 +31,7 @@ var MongoClient = require('mongodb').MongoClient;
 // Connection URL
 var url = 'mongodb://demo:demo007@ds023694.mlab.com:23694/heroku_0k7kk5fx';
 //post
+var fname;
 app.post('/setData', function (req, res) {
     console.log("POST: ");
     res.header("Access-Control-Allow-Origin", " *");
@@ -105,12 +107,22 @@ app.post('/setData', function (req, res) {
             } else {
 
                 console.log("Message Sent to the company");
+                console.log("Going to delete an existing file");
+                fs.unlink('./uploads/' + fname, function (err) {
+                    if (err) {
+                        console.error(err);
+                    }
+                    else {
+                        console.log("File deleted successfully!");
+   }
+  
+});
             }
             // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
             transporter.close();
         });
 
-
+  
         transporter.sendMail(mailOption, function (error, response) {  //callback
             if (error) {
                 return console.log('error', error);
@@ -133,10 +145,12 @@ app.post('/setData', function (req, res) {
             //db close
             db.close();
         });
-
+  
 
     });
+  
 });//end of POST
+ 
 app.listen(port, function () {
     console.log(port, "server running");
 })
