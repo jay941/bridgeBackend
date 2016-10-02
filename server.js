@@ -61,7 +61,7 @@ app.post('/setData', function (req, res) {
         var name = data.name[0];
         var email = data.email[0];
         var mobile = data.mobile[0];
-        var message = data.mobile[0];
+        var message = data.message[0];
         var fname=files.myfile[0].originalFilename;
         var fpath=files.myfile[0].path;
         console.log(name, email, mobile)
