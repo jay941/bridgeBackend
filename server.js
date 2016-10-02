@@ -1,4 +1,5 @@
 var express = require('express'),
+    multer	=	require('multer');
     app = express(),
 
     bodyParser = require('body-parser'),
@@ -6,6 +7,16 @@ var express = require('express'),
     multiparty = require('multiparty');
 port = process.env.PORT || 8077;
 cors = require('cors');
+
+var storage	=	multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+	callback(null, file.originalname );
+  }
+});
+var upload = multer({ storage : storage}).single('myfile');
 
 //configuration
 
@@ -28,6 +39,15 @@ app.post('/setData', function (req, res) {
     res.header("Access-Control-Allow-Methods", "GET, POST");
     // The above 4 lines are required for Cross Domain Communication(Allowing the methods that come as  
     // Cross Domain Request
+    upload(req,res,function(err) {
+		if(err) {
+		  res.end("Error uploading file.");
+		}
+		res.end("File is uploaded successfully!");
+
+      });
+
+
     //data- from post
     var form = new multiparty.Form();
     form.parse(req, function (err, fields, files) {
@@ -40,6 +60,8 @@ app.post('/setData', function (req, res) {
         var email = data.email[0];
         var mobile = data.mobile[0];
         var message = data.mobile[0];
+        var fname=files.myfile[0].originalFilename;
+        var fpath=files.myfile[0].path;
         console.log(name, email, mobile)
         //send mail configuration
         var transporter = nodemailer.createTransport({
@@ -75,6 +97,7 @@ app.post('/setData', function (req, res) {
             to: em.email,
             subject: 'Meaasage From' + " " + name,
             html: "<table border= 1><tr><td>Name</td><td>" + name + "</td></tr> <tr><td>Email</td><td>" + email + "</td></tr><tr><td>Mobile</td><td>" + mobile + "</td></tr><tr><td>Message</td><td>" + message + "</td></tr></table>"
+             , attachments: [{ filename: fname,path:'./uploads/'+fname}]
         };
         transporter.sendMail(mailOptionCompany, function (error, response) {  //callback
             if (error) {
